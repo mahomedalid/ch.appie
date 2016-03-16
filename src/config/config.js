@@ -92,7 +92,7 @@ var sections = {
 };
 
 var templates = {
-
+	places_1 : "<img src='@IMG@' /><h1>@TITLE@</h1><div>Direcci&oacute;n: @DIRECCION@<br />Rango:@RANGO@<br />Horario: @HORARIO@</div>",
 };
 
 var actions = {

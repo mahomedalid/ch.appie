@@ -1,4 +1,5 @@
 var sections = {
+
 	section_1 : {
 		title: 'MIS FAVORITOS',
 		icon: '',
