@@ -1,15 +1,25 @@
 var panelSections = {
-	section_1:{}, section_2:{}, section_3:{}, section_4:{},
-	section_5:{}, section_6:{}, section_7:{}, section_8:{},
-	
+	favs:{}, 
+	food:{}, 
+	myphotos:{}, 
+	notifications:{},
+	lodging:{}, 
+	tours:{}, 
+	services:{}, 
+	shopping:{}, 
+	logout:{},
 };
 
 var navbarSections = {
-	section_1:{}, section_2:{}, section_3:{}
+	favs:{}, food:{}, myphotos:{}
+};
+
+var feedConfigParams = {
+	'GOOGLE_PLACES_API_KEY' : ''
 };
 
 var sections = {
-	section_1 : {
+	favs : {
 		title: 'MIS FAVORITOS',
 		icon: '',
 		feed_url: '',
@@ -18,16 +28,17 @@ var sections = {
 		action: '',
 	},
 	
-	section_2 : {
+	food : {
 		title: 'ALIMENTOS Y BEBIDAS',
 		icon: '',
-		feed_url: '',
-		feed_type: '',
-		template: '',
+		//feed_url: 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=20.8813351,-103.8440796&radius=500&types=food&key=AIzaSyD8fnG3deK4byAezClxVUk5uVKx-g9PBqw',
+		feed_url: 'feed.maps.food.js',
+		feed_type: 'json',
+		template: 'places_1',
 		action: '',
 	}, 
 	
-	section_3 : {
+	myphotos : {
 		title: 'MIS FOTOS',
 		icon: '',
 		feed_url: '',
@@ -36,7 +47,7 @@ var sections = {
 		action: '',
 	}, 
 	
-	section_4 : {
+	notifications : {
 		title: 'NOTIFICACIONES',
 		icon: '',
 		feed_url: '',
@@ -45,16 +56,16 @@ var sections = {
 		action: '',
 	}, 
 	
-	section_5 : {
+	lodging : {
 		title: 'HOSPEDAJE',
 		icon: '',
-		feed_url: '',
-		feed_type: '',
-		template: '',
+		feed_url: 'feed.maps.lodging.js',
+		feed_type: 'json',
+		template: 'places_1',
 		action: '',
 	}, 
 	
-	section_6 : {
+	tours : {
 		title: 'TOURS',
 		icon: '',
 		feed_url: '',
@@ -63,7 +74,7 @@ var sections = {
 		action: '',
 	}, 
 	
-	section_7 : {
+	shopping : {
 		title: 'COMPRAS',
 		icon: '',
 		feed_url: '',
@@ -72,7 +83,7 @@ var sections = {
 		action: '',
 	}, 
 	
-	section_7 : {
+	services : {
 		title: 'SERVICIOS',
 		icon: '',
 		feed_url: '',
@@ -81,7 +92,7 @@ var sections = {
 		action: '',
 	}, 
 	
-	section_8 : {
+	logout : {
 		title: 'CERRAR SESI&Oacute;N',
 		icon: '',
 		feed_url: '',
@@ -92,10 +103,11 @@ var sections = {
 };
 
 var templates = {
-	places_1 : "<img src='@IMG@' /><h1>@TITLE@</h1><div>Direcci&oacute;n: @DIRECCION@<br />Rango:@RANGO@<br />Horario: @HORARIO@</div>",
+	places_1 : "<img src='@ICON@' /><h2>@NAME@</h2><p><strong>Direcci&oacute;n:</strong> @VICINITY@</p>",
 };
 
 var actions = {
 	add_to_favorites: "",
 	open_in_webview: "",
+	open_in_map:"",
 };
